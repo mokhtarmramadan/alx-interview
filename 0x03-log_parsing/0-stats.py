@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+''' log parsing '''
 import re
 import sys
 from typing import Dict
