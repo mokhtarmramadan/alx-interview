@@ -49,6 +49,7 @@ def print_statistics() -> None:
 
 
 def main():
+    ''' Entry point '''
     counter: int = 0
     try:
         for line in sys.stdin:
