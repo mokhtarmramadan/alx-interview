@@ -59,8 +59,9 @@ def main():
                 print_statistics()
                 counter = 0
     except KeyboardInterrupt:
+        pass
+    finally:
         print_statistics()
-
 
 if __name__ == "__main__":
     main()
