@@ -19,6 +19,7 @@ total_file_size: int = 0
 
 
 def line_parser(line: str) -> None:
+    ''' parses a line using regex '''
     global total_file_size
     global status_code_dict
 
