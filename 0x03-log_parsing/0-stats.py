@@ -63,5 +63,6 @@ def main():
     finally:
         print_statistics()
 
+
 if __name__ == "__main__":
     main()
