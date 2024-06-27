@@ -1,25 +1,22 @@
 #!/usr/bin/python3
-''' utf8 validation '''
+''' utf8 Validation '''
+binary_rep_for_n = []
+
+
+def DecimalToBinary(num):
+    ''' Converts a decimal number to its bianry representation '''
+    if num >= 1:
+        DecimalToBinary(num // 2)
+    binary_rep_for_n.append(num % 2)
+    return (num % 2)
+
+
 def validUTF8(data):
-    """Check if data is valid UTF-8 encoding."""
-    n_bytes = 0
-
+    ''' determines if a given data set represents a valid UTF-8 encoding '''
+    binary_numbers = []
     for num in data:
-        bin_rep = format(num, '#010b')[-8:]
-        if n_bytes == 0:
-            if bin_rep[0] == '0':
-                continue
-            elif bin_rep[:3] == '110':
-                n_bytes = 1
-            elif bin_rep[:4] == '1110':
-                n_bytes = 2
-            elif bin_rep[:5] == '11110':
-                n_bytes = 3
-            else:
-                return False
-        else:
-            if not bin_rep.startswith('10'):
-                return False
-        n_bytes -= 1
-
-    return n_bytes == 0
+        del binary_rep_for_n[:]
+        DecimalToBinary(num)
+        if len(binary_rep_for_n) > 8:
+            return False
+    return True
